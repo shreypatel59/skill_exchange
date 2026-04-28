@@ -1,0 +1,334 @@
+/* ========== RESET ========== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', Arial, sans-serif;
+}
+
+html{scroll-behavior:smooth;}
+
+/* ========== BACKGROUND ========== */
+body{
+    min-height:100vh;
+    background:
+        radial-gradient(circle at top left, #4caf50 0%, transparent 40%),
+        radial-gradient(circle at bottom right, #2196f3 0%, transparent 45%),
+        linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* floating blur shapes */
+.bg-shape{
+    position:fixed;
+    width:300px;
+    height:300px;
+    background:rgba(255,255,255,0.15);
+    filter:blur(120px);
+    z-index:-1;
+}
+.bg1{top:-100px; left:-100px;}
+.bg2{bottom:-100px; right:-100px;}
+
+/* ========== NAVBAR ========== */
+.navbar{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:18px 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(14px);
+    box-shadow:0 8px 30px rgba(0,0,0,0.3);
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:700;
+    color:#b9ffca;
+}
+
+.nav-links a{
+    margin:0 14px;
+    text-decoration:none;
+    color:#fff;
+    font-size:14px;
+    font-weight:600;
+    position:relative;
+}
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    width:0;
+    height:2px;
+    background:#7CFF9A;
+    left:0;
+    bottom:-6px;
+    transition:0.3s;
+}
+.nav-links a:hover::after{width:100%;}
+
+.nav-buttons a{
+    text-decoration:none;
+    padding:10px 24px;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:600;
+    color:#fff;
+    transition:0.3s;
+}
+
+.register{
+    background:linear-gradient(135deg,#43e97b,#38f9d7);
+}
+.login{
+    background:linear-gradient(135deg,#4facfe,#00f2fe);
+    margin-left:10px;
+}
+
+.nav-buttons a:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* ========== HERO ========== */
+.hero{
+    min-height:100vh;
+    background:
+        linear-gradient(120deg, rgba(0,0,0,0.7), rgba(0,0,0,0.4)),
+        url("../images/hero.png") center/cover no-repeat;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding-top:120px;
+}
+
+.hero-content{
+    max-width:780px;
+    padding:60px;
+    border-radius:28px;
+    text-align:center;
+    background:rgba(255,255,255,0.18);
+    backdrop-filter:blur(18px);
+    box-shadow:0 40px 80px rgba(0,0,0,0.45);
+    animation:fadeUp 1.3s ease;
+}
+
+.hero h1{
+    font-size:52px;
+    margin-bottom:14px;
+}
+.hero p{
+    font-size:18px;
+    opacity:0.95;
+    margin-bottom:35px;
+}
+
+.hero-buttons a{
+    display:inline-block;
+    padding:15px 38px;
+    border-radius:40px;
+    font-size:15px;
+    font-weight:600;
+    margin:0 10px;
+    color:#fff;
+    text-decoration:none;
+    transition:0.35s;
+}
+.hero-buttons a:hover{
+    transform:translateY(-6px) scale(1.05);
+    box-shadow:0 14px 35px rgba(0,0,0,0.5);
+}
+
+/* ========== SECTIONS ========== */
+.section{
+    width:80%;
+    margin:120px auto;
+    padding:70px;
+    border-radius:28px;
+    background:rgba(255,255,255,0.14);
+    backdrop-filter:blur(16px);
+    box-shadow:0 30px 70px rgba(0,0,0,0.35);
+    text-align:center;
+}
+
+.section h2{
+    font-size:34px;
+    margin-bottom:18px;
+}
+.section p{
+    font-size:16px;
+    opacity:0.9;
+}
+
+/* ========== FEATURES / BENEFITS ========== */
+.features{
+    display:flex;
+    justify-content:center;
+    gap:45px;
+    padding:80px 40px;
+}
+
+.feature{
+    width:260px;
+    padding:40px 25px;
+    border-radius:26px;
+    text-align:center;
+    background:rgba(255,255,255,0.18);
+    backdrop-filter:blur(14px);
+    box-shadow:0 25px 60px rgba(0,0,0,0.4);
+    transition:0.4s;
+}
+
+.feature:hover{
+    transform:translateY(-18px) scale(1.04);
+}
+
+.icon{
+    width:78px;
+    height:78px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:32px;
+    margin:auto;
+    margin-bottom:16px;
+    box-shadow:0 15px 30px rgba(0,0,0,0.5);
+}
+
+.green{background:#00e676;}
+.blue{background:#00b0ff;}
+.orange{background:#ff9100;}
+
+/* ========== HOW IT WORKS ========== */
+.section-title{
+    text-align:center;
+    font-size:36px;
+    margin-bottom:45px;
+}
+
+.steps{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    padding-bottom:120px;
+}
+
+.step{
+    width:290px;
+    padding:45px 30px;
+    border-radius:28px;
+    text-align:center;
+    background:rgba(255,255,255,0.16);
+    backdrop-filter:blur(14px);
+    box-shadow:0 30px 70px rgba(0,0,0,0.45);
+    transition:0.4s;
+}
+
+.step:hover{
+    transform:translateY(-18px) scale(1.05);
+}
+
+.step-icon{
+    font-size:44px;
+    margin-bottom:15px;
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(50px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* ========== RESPONSIVE ========== */
+@media(max-width:900px){
+    .features,.steps{flex-direction:column; align-items:center;}
+    .hero h1{font-size:40px;}
+    .navbar{padding:18px 30px;}
+}
+
+/* ========== ABOUT US (SPECIAL SECTION) ========== */
+
+#about {
+    min-height: 90vh;
+    width: 85%;
+    margin: 140px auto;
+    padding: 90px 80px;
+    border-radius: 32px;
+    background: rgba(255,255,255,0.16);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 40px 90px rgba(0,0,0,0.45);
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    scroll-margin-top: 120px; /* FIX SCROLL POSITION */
+    animation: fadeUp 1.2s ease;
+}
+
+/* Left text */
+.about-text {
+    flex: 1;
+    text-align: left;
+}
+
+.about-text h2 {
+    font-size: 46px;
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.about-text p {
+    font-size: 18px;
+    line-height: 1.8;
+    opacity: 0.95;
+    margin-bottom: 20px;
+}
+
+/* Right image */
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 26px;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.5);
+    transition: 0.5s;
+}
+
+.about-image img:hover {
+    transform: scale(1.05) rotate(-1deg);
+}
+
+/* ========== NAV SCROLL FIX FOR ALL SECTIONS ========== */
+.section,
+#benefits,
+#how-it-works {
+    scroll-margin-top: 120px;
+}
+
+/* ========== RESPONSIVE ABOUT ========== */
+@media(max-width:900px){
+    #about{
+        flex-direction: column;
+        padding: 70px 40px;
+        text-align: center;
+    }
+
+    .about-text{
+        text-align: center;
+    }
+
+    .about-text h2{
+        font-size: 36px;
+    }
+}
